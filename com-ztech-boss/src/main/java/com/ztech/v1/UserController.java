@@ -2,8 +2,10 @@ package com.ztech.v1;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.ztech.codec.Md5Utils;
 import com.ztech.common.msg.Constant;
 import com.ztech.common.msg.MsgDataBody;
+import com.ztech.common.redis.RedisFactory;
 import com.ztech.common.web.ApiController;
 import com.ztech.impl.SystemService;
 import com.ztech.service.sys.UserService;
@@ -15,11 +17,13 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/v1/user")
+@RequestMapping("sys/user")
 public class UserController extends ApiController<User, UserService> {
 
     @Autowired
     SystemService systemService;
+    @Autowired
+    RedisFactory redisFactory;
 
     /*
      * 公共接口
@@ -68,8 +72,11 @@ public class UserController extends ApiController<User, UserService> {
 
     @RequestMapping("str")
     public String str() {
+        redisFactory.saveByStr("name","123");
         return getBaseService().str("============");
     }
+
+
    /* @PostMapping("saveList")//批量保存，一条保存失败，数据全部回滚，测试事务是否生效
     public MsgBody saveUser(@RequestBody User[] userList){
         MsgBody msgBody = new MsgBody();

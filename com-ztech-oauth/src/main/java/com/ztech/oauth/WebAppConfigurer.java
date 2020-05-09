@@ -2,6 +2,7 @@ package com.ztech.oauth;
 
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -30,10 +31,14 @@ public class WebAppConfigurer implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
+        String file = ResourceUtils.CLASSPATH_URL_PREFIX;
         //文件磁盘图片url 映射
         //配置server虚拟路径，handler为前台访问的目录，locations为files相对应的本地路径
         registry.addResourceHandler("/image/**").addResourceLocations("file:D:\\images\\");
         // registry.addResourceHandler("/image/**").addResourceLocations("file:/home/userImages/");
     }
 
+    public static void main(String[] args) {
+        System.out.println(ResourceUtils.CLASSPATH_URL_PREFIX);
+    }
 }

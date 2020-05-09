@@ -25,8 +25,8 @@ import java.util.Set;
 @EnableResourceServer
 public class OAuth2ServerConfig extends ResourceServerConfigurerAdapter {
 
-    @Autowired
-    private TokenEndpoint tokenEndpoint;
+    /*@Autowired
+    private TokenEndpoint tokenEndpoint;*/
 
     private static final String DEMO_RESOURCE_ID = "order";
 
@@ -57,15 +57,15 @@ public class OAuth2ServerConfig extends ResourceServerConfigurerAdapter {
 
     }
 
-    /**
+   /**
      * 给allowedRequestMethods加入get方法
      * 没有该方法只能通过post请求获取token
      */
-    @PostConstruct
+   /* @PostConstruct
     public void reconfigure() {
         Set<HttpMethod> allowedMethods = new HashSet<>(Arrays.asList(HttpMethod.GET, HttpMethod.POST));
         tokenEndpoint.setAllowedRequestMethods(allowedMethods);
-    }
+    }*/
 
 }
 
@@ -218,20 +218,6 @@ public class OAuth2ServerConfig extends ResourceServerConfigurerAdapter {
             clients.withClientDetails(clientDetailsService());
         }
 
-
-        @Bean
-        public TokenStore tokenStore() {
-            TokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
-            return tokenStore;
-        }
-
-        @Bean
-        public AuthorizationServerTokenServices tokenServices() {
-            DefaultTokenServices tokenService = new DefaultTokenServices();
-            tokenService.setTokenStore(tokenStore());
-            tokenService.setAccessTokenValiditySeconds(60 * 24 * 365);
-            return tokenService;
-        }
 
 
 

@@ -2,43 +2,46 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>com-ztech-scaffold</artifactId>
         <groupId>com.ztech.scaffold</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.ztech.scaffold.common</groupId>
-    <artifactId>com-ztech-scaffold-common</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ztech.scaffold.oauth</groupId>
+    <artifactId>com-ztech-scaffold-oauth</artifactId>
     <version>${com.ztech.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
+            <groupId>com.ztech.scaffold.service</groupId>
+            <artifactId>com-ztech-scaffold-service</artifactId>
+            <version>${com.ztech.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com-ztech-utils</groupId>
             <artifactId>com-ztech-utils</artifactId>
             <version>${com.ztech.version}</version>
         </dependency>
+
+    <!-- security依赖-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security.oauth</groupId>
+        <artifactId>spring-security-oauth2</artifactId>
+        <version>2.3.3.RELEASE</version>
+    </dependency>
+
         <dependency>
             <groupId>com.belerweb</groupId>
             <artifactId>pinyin4j</artifactId>
             <version>2.5.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>2.9.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.49</version>
-        </dependency>
     </dependencies>
 </project>

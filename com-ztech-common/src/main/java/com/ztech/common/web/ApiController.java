@@ -74,10 +74,14 @@ public abstract class ApiController<T extends CurdEntity, S extends CurdService<
         msgBody.setCode(Constant.Error.getCode());
         msgBody.setMsg("保存实体失败");
         try {
-            int rows = getBaseService().save(t);
-            if (rows > 0) {
-                msgBody.setCode(Constant.Success.getCode());
-                msgBody.setMsg("保存实体成功");
+            if (t.validate()) {
+                msgBody.setMsg("保存失败 原因：" + t.validateStr());
+            }else {
+                int rows = getBaseService().save(t);
+                if (rows > 0) {
+                    msgBody.setCode(Constant.Success.getCode());
+                    msgBody.setMsg("保存实体成功");
+                }
             }
         } catch (Exception e) {
             msgBody.setMsg(e.getMessage());

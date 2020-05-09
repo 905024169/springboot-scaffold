@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.util.Date;
 
-public abstract class CurdEntity {
+public abstract class CurdEntity extends BaseEntity{
     @TableId(value = "id", type = IdType.INPUT)
     Long id;
     @TableField("create_time")
