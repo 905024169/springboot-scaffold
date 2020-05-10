@@ -1,9 +1,8 @@
-package com.ztech.common.date.service;
+package com.ztech.date.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.ztech.common.date.entity.CurdEntity;
-
+import com.ztech.date.entity.CurdEntity;
 
 import java.util.List;
 

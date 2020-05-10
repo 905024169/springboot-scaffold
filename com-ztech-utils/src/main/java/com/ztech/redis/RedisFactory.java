@@ -1,4 +1,7 @@
-package com.ztech.common.redis;
+package com.ztech.redis;
+
+
+
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
@@ -12,6 +15,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @Author: www.java2345.com
+ * @DATE: 2020/5/9 23:35
+ **/
 public class RedisFactory {
 
 

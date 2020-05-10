@@ -1,4 +1,4 @@
-package com.ztech.common.msg;
+package com.ztech.msg;
 
 public class MsgDataBody<T> extends MsgBody {
 

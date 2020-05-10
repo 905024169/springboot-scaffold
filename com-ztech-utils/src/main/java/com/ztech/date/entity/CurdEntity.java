@@ -1,4 +1,4 @@
-package com.ztech.common.date.entity;
+package com.ztech.date.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -13,14 +13,10 @@ public abstract class CurdEntity extends BaseEntity{
     Date createTime;
     @TableField("create_by")
     Long createById;
-    @TableField(exist = false)
-    Long createBy;
     @TableField("update_time")
     Date updateTime;
     @TableField("update_by")
     Long updateById;
-    @TableField(exist = false)
-    Long updateBy;
 
     public Long getId() {
         return id;
@@ -46,14 +42,6 @@ public abstract class CurdEntity extends BaseEntity{
         this.createById = createById;
     }
 
-    public Long getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(Long createBy) {
-        this.createBy = createBy;
-    }
-
     public Date getUpdateTime() {
         return updateTime;
     }
@@ -68,13 +56,5 @@ public abstract class CurdEntity extends BaseEntity{
 
     public void setUpdateById(Long updateById) {
         this.updateById = updateById;
-    }
-
-    public Long getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(Long updateBy) {
-        this.updateBy = updateBy;
     }
 }

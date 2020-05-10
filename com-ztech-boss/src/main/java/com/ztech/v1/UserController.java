@@ -2,14 +2,13 @@ package com.ztech.v1;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.ztech.codec.Md5Utils;
-import com.ztech.common.msg.Constant;
-import com.ztech.common.msg.MsgDataBody;
-import com.ztech.common.redis.RedisFactory;
-import com.ztech.common.web.ApiController;
 import com.ztech.impl.SystemService;
+import com.ztech.msg.Constant;
+import com.ztech.msg.MsgDataBody;
+import com.ztech.redis.RedisFactory;
 import com.ztech.service.sys.UserService;
 import com.ztech.vo.sys.User;
+import com.ztech.web.ApiController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -76,7 +75,11 @@ public class UserController extends ApiController<User, UserService> {
         return getBaseService().str("============");
     }
 
-
+    @PostMapping("saveUser")
+    public String saveUser(User user) {
+       getBaseService().save(user);
+        return getBaseService().str("============");
+    }
    /* @PostMapping("saveList")//批量保存，一条保存失败，数据全部回滚，测试事务是否生效
     public MsgBody saveUser(@RequestBody User[] userList){
         MsgBody msgBody = new MsgBody();

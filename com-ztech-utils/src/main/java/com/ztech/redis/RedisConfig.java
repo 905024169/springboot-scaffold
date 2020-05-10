@@ -1,4 +1,6 @@
-package com.ztech.common.redis;
+package com.ztech.redis;
+
+
 
 
 import com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer;
@@ -18,7 +20,12 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
-
+/**
+ * Redis配置类
+ *
+ * @Author: www.java2345.com
+ * @DATE: 2020/5/9 23:39
+ **/
 @Configuration
 @EnableCaching//开启注解
 public class RedisConfig extends CachingConfigurerSupport {
@@ -62,4 +69,5 @@ public class RedisConfig extends CachingConfigurerSupport {
         return redisFactory;
     }
 }
+
 

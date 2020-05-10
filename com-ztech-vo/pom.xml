@@ -15,8 +15,8 @@
     <packaging>jar</packaging>
 <dependencies>
     <dependency>
-        <groupId>com.ztech.scaffold.common</groupId>
-        <artifactId>com-ztech-scaffold-common</artifactId>
+        <groupId>com-ztech-utils</groupId>
+        <artifactId>com-ztech-utils</artifactId>
         <version>${com.ztech.version}</version>
     </dependency>
 

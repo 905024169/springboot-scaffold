@@ -1,4 +1,4 @@
-package com.ztech.common.config;
+package com.ztech.config;
 
 public @interface MyBatisDao {
 }

@@ -1,4 +1,7 @@
-package com.ztech.common.utils;
+package com.ztech.lang;
+
+
+
 
 
 import net.sourceforge.pinyin4j.PinyinHelper;
@@ -10,7 +13,10 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
 
 /**
  * 拼音工具类
- */
+ *
+ * @Author: www.java2345.com
+ * @DATE: 2020/5/9 23:49
+ **/
 public class PinYinUtils {
 
     /**
@@ -59,3 +65,4 @@ public class PinYinUtils {
     }
 
 }
+

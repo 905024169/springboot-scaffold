@@ -1,18 +1,19 @@
-package com.ztech.common.web;
+package com.ztech.web;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.ztech.common.date.entity.CurdEntity;
-import com.ztech.common.date.service.CurdService;
-import com.ztech.common.msg.Constant;
-import com.ztech.common.msg.MsgBody;
-import com.ztech.common.msg.MsgDataBody;
+import com.ztech.date.entity.CurdEntity;
+import com.ztech.date.service.CurdService;
+import com.ztech.msg.Constant;
+import com.ztech.msg.MsgBody;
+import com.ztech.msg.MsgDataBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 
 public abstract class ApiController<T extends CurdEntity, S extends CurdService<T>> {

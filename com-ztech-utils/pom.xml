@@ -37,5 +37,23 @@
         <artifactId>commons-io</artifactId>
         <version>2.6</version>
     </dependency>
+
+    <!-- redis依赖 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.49</version>
+    </dependency>
+
+    <!-- 拼音工具类依赖 -->
+    <dependency>
+        <groupId>com.belerweb</groupId>
+        <artifactId>pinyin4j</artifactId>
+        <version>2.5.1</version>
+    </dependency>
 </dependencies>
 </project>

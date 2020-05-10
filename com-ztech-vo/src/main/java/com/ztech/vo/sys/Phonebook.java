@@ -1,7 +1,7 @@
 package com.ztech.vo.sys;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.ztech.common.date.entity.CurdEntity;
+import com.ztech.date.entity.CurdEntity;
 
 @TableName("phonebook")
 public class Phonebook extends CurdEntity {

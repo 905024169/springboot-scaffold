@@ -1,4 +1,4 @@
-package com.ztech.common.date.entity;
+package com.ztech.date.entity;
 
 //
 // Source code recreated from a .class file by IntelliJ IDEA
@@ -6,21 +6,9 @@ package com.ztech.common.date.entity;
 //
 
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.ztech.validator.ValidatorUtil;
-import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 
 public abstract class BaseEntity implements Serializable, Cloneable {

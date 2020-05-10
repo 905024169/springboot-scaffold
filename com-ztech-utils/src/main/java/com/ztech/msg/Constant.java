@@ -1,4 +1,4 @@
-package com.ztech.common.msg;
+package com.ztech.msg;
 
 public enum Constant {
     Error(101),

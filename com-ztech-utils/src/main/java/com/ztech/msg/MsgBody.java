@@ -1,11 +1,11 @@
-package com.ztech.common.msg;
+package com.ztech.msg;
 
 public class MsgBody {
 
     int code;
     String msg;
 
-    public MsgBody(int code, String msg){
+    public MsgBody(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
@@ -27,5 +27,15 @@ public class MsgBody {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public void success(String msg) {
+        setMsg(msg);
+        setCode(Constant.Success.getCode());
+    }
+
+    public void find(String msg) {
+        setMsg(msg);
+        setCode(Constant.Error.getCode());
     }
 }

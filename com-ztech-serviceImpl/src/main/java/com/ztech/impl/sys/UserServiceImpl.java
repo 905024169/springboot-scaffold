@@ -1,8 +1,7 @@
 package com.ztech.impl.sys;
 
-
-import com.ztech.common.date.service.impl.CurdServiceImpl;
 import com.ztech.dao.sys.UserDao;
+import com.ztech.date.service.impl.CurdServiceImpl;
 import com.ztech.service.sys.UserService;
 import com.ztech.vo.sys.User;
 import org.springframework.stereotype.Service;

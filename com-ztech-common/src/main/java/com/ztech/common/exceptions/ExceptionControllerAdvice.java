@@ -1,14 +1,16 @@
 package com.ztech.common.exceptions;
 
-
-import com.ztech.common.msg.Constant;
-import com.ztech.common.msg.MsgBody;
+import com.ztech.exceptions.ValidException;
+import com.ztech.msg.Constant;
+import com.ztech.msg.MsgBody;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
+ * 自定义抛出异常类
+ *
  * @Author: www.java2345.com
  * @DATE: 2020/5/9 21:27
  **/
@@ -23,10 +25,15 @@ public class ExceptionControllerAdvice {
         return objectError.getDefaultMessage();
     }*/
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+  /*  @ExceptionHandler(MethodArgumentNotValidException.class)
     public MsgBody MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e) {
         ObjectError objectError = e.getBindingResult().getAllErrors().get(0);
         // 注意哦，这里返回类型是自定义响应体
         return new MsgBody(Constant.Error.getCode(), objectError.getDefaultMessage());
+    }*/
+
+    @ExceptionHandler(ValidException.class)
+    public MsgBody ValidExceptionHandler(ValidException e) {
+        return new MsgBody(Constant.Error.getCode(), e.getMessage());
     }
 }

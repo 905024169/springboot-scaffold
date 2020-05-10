@@ -1,11 +1,14 @@
 package com.ztech.vo.sys;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.ztech.common.date.entity.CurdEntity;
+import com.ztech.date.entity.CurdEntity;
+
+import javax.validation.constraints.NotBlank;
 
 
 @TableName("wx_user")
 public class User extends CurdEntity {
+    @NotBlank(message = "名称不能为空")
     String name;
     String user;
     Long groupValue;
